@@ -65,7 +65,7 @@ export interface Email {
 };
 
 interface AnalysisSectionProps {
-  email: Email;
+  email: any;
 }
 
 interface AccordionSectionProps {
@@ -115,10 +115,10 @@ export const AnalysisSection = ({ email }: AnalysisSectionProps) => {
   const { analysis_result } = email;
   
   const [openSections, setOpenSections] = useState({
-    summary: true,
-    classification: true,
-    action: true,
-    structuredData: true,
+    summary: false,
+    classification: false,
+    action: false,
+    structuredData: false,
     actionItems: analysis_result.action_items.length > 0,
     confidence: false
   });

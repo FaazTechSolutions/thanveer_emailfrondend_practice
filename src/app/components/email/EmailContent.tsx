@@ -62,7 +62,7 @@ import { StatusBadge } from '../ui/StatusBadge';
 import { Card, CardHeader, CardContent } from '../ui/Card';
 
 interface EmailContentProps {
-  email: Email;
+  email: any;
 }
 
 export const EmailContent = ({ email }: EmailContentProps) => {
@@ -70,7 +70,8 @@ export const EmailContent = ({ email }: EmailContentProps) => {
     email.translated ? 'translated' : 'original'
   );
 
-  const hasTranslation = email.translated && email.translated_content;
+  const hasTranslation =  email.translated_content;
+  console.log('Email in EmailContent:', email)
 
   return (
     <Card>
@@ -158,7 +159,7 @@ export const EmailContent = ({ email }: EmailContentProps) => {
           </pre>
 
           {/* Translation Status Indicator */}
-          {!email.translated && (
+          {!email.translated_content && (
             <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
