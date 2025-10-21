@@ -89,7 +89,7 @@ export default function EmailIntelligenceDashboard() {
       }
       
       setError(null);
-      const res = await fetch('http://localhost:3000/mails?limit=10&offset=0');
+      const res = await fetch('https://emailbackend-practice.onrender.com/mails?limit=10&offset=0');
       
       if (!res.ok) throw new Error('Failed to fetch emails');
       
@@ -210,7 +210,7 @@ export default function EmailIntelligenceDashboard() {
 //   const fetchEmails = async () => {
 //     setLoading(true);
 //     try {
-//       const res = await fetch(`http://localhost:3000/emails?page=${page}&size=${size}`);
+//       const res = await fetch(`https://emailbackend-practice.onrender.com/emails?page=${page}&size=${size}`);
 //       const data = await res.json();
 //       setEmails(data.data.Data || []);
 //     } catch (err) {
