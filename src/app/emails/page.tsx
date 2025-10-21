@@ -90,7 +90,7 @@ export default function EmailsPage() {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://emailbackend-practice.onrender.com/emails?page=${page}&size=${size}&orderby=${orderBy}&orderdir=${orderDir}`
+        `https://thanveer-emailbackend-practice.onrender.com/emails?page=${page}&size=${size}&orderby=${orderBy}&orderdir=${orderDir}`
       );
       const data = await res.json();
       setEmails(data.data.Data || []);
@@ -103,7 +103,7 @@ export default function EmailsPage() {
 
   const fetchExistingProcessResults = async (reqId: string) => {
     try {
-      const response = await fetch(`https://emailbackend-practice.onrender.com/email-by-reqid?req_id=${reqId}`);
+      const response = await fetch(`https://thanveer-emailbackend-practice.onrender.com/email-by-reqid?req_id=${reqId}`);
       if (response.ok) {
         const result = await response.json();
         setExistingProcessResults(result);
@@ -128,7 +128,7 @@ export default function EmailsPage() {
     setProcessResult(null);
     
     try {
-      const response = await fetch(`https://emailbackend-practice.onrender.com/ingest-email?reqid=${email.RecId}`, {
+      const response = await fetch(`https://thanveer-emailbackend-practice.onrender.com/ingest-email?reqid=${email.RecId}`, {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
